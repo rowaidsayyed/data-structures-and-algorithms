@@ -14,23 +14,6 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  // let newArr = arr.map((val)=>{
-
-  //   if(val===0) return 1;
-  //   if(val>0){
-  //     for(let i=1;i<val;i++){
-  //       sum *= 2;
-  //     }
-  //     return sum;
-  //   }else{
-  //     for(let i=1;i<Math.abs(val);i++){
-  //       sum *= 2;
-  //     }
-  //     sum = 1/sum;
-  //     return sum;
-  //   }
-  // });
-  // return newArr;
   let newArr =[];
   for(let j = 0 ;j<arr.length;j++){
     if(arr[j]===0){
@@ -68,6 +51,7 @@ const forEachTwoToThe = (arr) => {
     if(e>0)newArr.push(sum/2);
     if(e<0)newArr.push(1/(sum/2));
   });
+  console.log(newArr);
   return newArr;
 };
 
