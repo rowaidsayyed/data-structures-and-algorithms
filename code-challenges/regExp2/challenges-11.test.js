@@ -166,7 +166,7 @@ describe('Testing challenge 3', () => {
     expect(validatePhoneNumber('222 222-2222-')).toBeFalsy();
     expect(validatePhoneNumber('(222 222- 2222')).toBeFalsy();
     expect(validatePhoneNumber('(222 222 -2222')).toBeFalsy();
-    // expect(validatePhoneNumber('523 555--5555')).toBeFalsy();
+    expect(validatePhoneNumber('523 555--5555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
