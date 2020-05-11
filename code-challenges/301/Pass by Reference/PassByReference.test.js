@@ -2,6 +2,24 @@
 
 
 /* ------------------------------------------------------------------------------------------------
+Write a function named raisedToTheThird that takes in an array of numbers
+and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()).
+Use forEach to solve this problem.
+
+------------------------------------------------------------------------------------------------ */
+
+const raisedToTheThird = (arr) => {
+  // Solution code here...
+  let newArr =[];
+  arr.forEach(e =>{
+    newArr.push(Math.pow(e,3));
+  });
+  return newArr;
+}
+
+/* ------------------------------------------------------------------------------------------------
+
+
 CHALLENGE 1
 
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
@@ -108,6 +126,12 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
+
+describe('Testing Review challenge ', () => {
+  test('It should return a new array of numbers raised to the thrid power', () => {
+    expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
+  });
+});
 
 describe('Testing challenge 1', () => {
   test('It should append without modifying the oiginal', () => {

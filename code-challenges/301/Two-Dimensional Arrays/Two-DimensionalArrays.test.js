@@ -1,6 +1,23 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+CHALLENGE 1 - Review
+
+Write a function that finds maximum value in an array
+using the 'reduce' method.
+Should handle negative values and duplicates
+
+E.g. [-4,2,7,5,-9,2] -> 7
+------------------------------------------------------------------------------------------------ */
+const maxInArray = (arr) => {
+  // Solution code here...
+  return arr.reduce((acc,e) => {
+    if(e>acc) acc=e;
+    return acc;
+  },0);
+};
+
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies.
 Pat has data for the hourly sales of cookies per hour for each store.
@@ -200,7 +217,14 @@ All the code below will verify that your functions are working to solve the chal
 DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenge-12.test.js
 ------------------------------------------------------------------------------------------------ */
-
+describe('Testing Review challenge ', () => {
+  test('It should return the maximum number found', () => {
+    expect(maxInArray([4, 2, 7, 5, 9, 2])).toStrictEqual(9);
+  });
+  test('It should handle negatives and return the maximum number found', () => {
+    expect(maxInArray([4, -2, -7, 5, -9, 2])).toStrictEqual(5);
+  });
+});
 
 describe('Testing challenge 1', () => {
   test('It should add the hourly totals array', () => {
