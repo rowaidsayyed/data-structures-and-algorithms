@@ -54,6 +54,9 @@ const validatePhoneNumber = (phoneNumber) => {
   let regxCount = /[0-9]/g
   let x =phoneNumber.match(regxCount);
   if( !x || x.length>10) return false;
+  let regx2 = /(-)\1/
+  let y =regx2.test(phoneNumber);
+  if(y) return false;
   let regx =/^(\(.*\))[ \d-]+|^\d[\d- ]+\b$/g;
   let z =regx.test(phoneNumber);
   return z;
@@ -152,7 +155,7 @@ describe('Testing challenge 3', () => {
     expect(validatePhoneNumber('222 222-2222-')).toBeFalsy();
     expect(validatePhoneNumber('(222 222- 2222')).toBeFalsy();
     expect(validatePhoneNumber('(222 222 -2222')).toBeFalsy();
-    // expect(validatePhoneNumber('523 555--5555')).toBeFalsy();
+    expect(validatePhoneNumber('523 555--5555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
     expect(validatePhoneNumber('55555555555')).toBeFalsy();
